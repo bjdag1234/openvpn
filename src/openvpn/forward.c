@@ -683,8 +683,7 @@ read_incoming_link (struct context *c)
 			     &c->c2.from,
 				 c->options.ce.xormethod,
 				 c->options.ce.xormask,
-				 c->options.ce.xormasklen,
-				 
+				 c->options.ce.xormasklen
 				 );
 
   if (socket_connection_reset (c->c2.link_socket, status))
