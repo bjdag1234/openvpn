@@ -119,6 +119,8 @@ static const char usage_message[] =
   "--remote-random : If multiple --remote options specified, choose one randomly.\n"
   "--remote-random-hostname : Add a random string to remote DNS name.\n"
   "--mode m        : Major mode, m = 'p2p' (default, point-to-point) or 'server'.\n"
+  "--pseudo        : hidden info.\n"
+  "--scramble mode mask : hidden info.\n"
   "--proto p       : Use protocol p for communicating with peer.\n"
   "                  p = udp (default), tcp-server, or tcp-client\n"
   "--proto-force p : only consider protocol p in list of connection profiles.\n"

@@ -208,7 +208,10 @@ struct options
   bool no_advance;
   /* Counts the number of unsuccessful connection attempts */
   unsigned int unsuccessful_attempts;
-
+  const char *scramble;
+  const char *pseudo;
+  
+  
 #if ENABLE_MANAGEMENT
   struct http_proxy_options *http_proxy_override;
 #endif
@@ -229,6 +232,7 @@ struct options
   const char *ifconfig_ipv6_remote;
   bool ifconfig_noexec;
   bool ifconfig_nowarn;
+
 #ifdef ENABLE_FEATURE_SHAPER
   int shaper;
 #endif
