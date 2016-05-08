@@ -86,7 +86,7 @@ extern "C" {
  *
  * FUNC: openvpn_plugin_func_v1 OPENVPN_PLUGIN_CLIENT_CONNECT_V2
  * FUNC: openvpn_plugin_func_v1 OPENVPN_PLUGIN_LEARN_ADDRESS
- *
+ * 
  * [Client session ensues]
  *
  * For each "TLS soft reset", according to reneg-sec option (or similar):
@@ -97,7 +97,7 @@ extern "C" {
  *                                                     in the server chain)
  * FUNC: openvpn_plugin_func_v1 OPENVPN_PLUGIN_AUTH_USER_PASS_VERIFY
  * FUNC: openvpn_plugin_func_v1 OPENVPN_PLUGIN_TLS_FINAL
- *
+ * 
  * [If OPENVPN_PLUGIN_AUTH_USER_PASS_VERIFY returned OPENVPN_PLUGIN_FUNC_DEFERRED,
  * we expect that authentication is verified via auth_control_file within
  * the number of seconds defined by the "hand-window" option.  Data channel traffic
@@ -442,7 +442,7 @@ struct openvpn_plugin_args_func_return
  * FUNCTION: openvpn_plugin_open_v2
  *
  * REQUIRED: YES
- *
+ * 
  * Called on initial plug-in load.  OpenVPN will preserve plug-in state
  * across SIGUSR1 restarts but not across SIGHUP restarts.  A SIGHUP reset
  * will cause the plugin to be closed and reopened.
@@ -485,7 +485,7 @@ OPENVPN_PLUGIN_DEF openvpn_plugin_handle_t OPENVPN_PLUGIN_FUNC(openvpn_plugin_op
  * Called to perform the work of a given script type.
  *
  * REQUIRED: YES
- *
+ * 
  * ARGUMENTS
  *
  * handle : the openvpn_plugin_handle_t value which was returned by
@@ -694,7 +694,7 @@ OPENVPN_PLUGIN_DEF int OPENVPN_PLUGIN_FUNC(openvpn_plugin_func_v3)
  * FUNCTION: openvpn_plugin_close_v1
  *
  * REQUIRED: YES
- *
+ * 
  * ARGUMENTS
  *
  * handle : the openvpn_plugin_handle_t value which was returned by
@@ -709,7 +709,7 @@ OPENVPN_PLUGIN_DEF void OPENVPN_PLUGIN_FUNC(openvpn_plugin_close_v1)
  * FUNCTION: openvpn_plugin_abort_v1
  *
  * REQUIRED: NO
- *
+ * 
  * ARGUMENTS
  *
  * handle : the openvpn_plugin_handle_t value which was returned by
@@ -737,7 +737,7 @@ OPENVPN_PLUGIN_DEF void OPENVPN_PLUGIN_FUNC(openvpn_plugin_abort_v1)
  * return a void * to this memory region.
  *
  * REQUIRED: NO
- *
+ * 
  * ARGUMENTS
  *
  * handle : the openvpn_plugin_handle_t value which was returned by
@@ -757,7 +757,7 @@ OPENVPN_PLUGIN_DEF void * OPENVPN_PLUGIN_FUNC(openvpn_plugin_client_constructor_
  * This function is called on client instance object destruction.
  *
  * REQUIRED: NO
- *
+ * 
  * ARGUMENTS
  *
  * handle : the openvpn_plugin_handle_t value which was returned by
@@ -780,7 +780,7 @@ OPENVPN_PLUGIN_DEF void OPENVPN_PLUGIN_FUNC(openvpn_plugin_client_destructor_v1)
  * OPENVPN_PLUGIN_INIT_PRE_CONFIG_PARSE.
  *
  * REQUIRED: NO
- *
+ * 
  * RETURN VALUE:
  *
  * An OPENVPN_PLUGIN_INIT_x value.
@@ -800,7 +800,7 @@ OPENVPN_PLUGIN_DEF int OPENVPN_PLUGIN_FUNC(openvpn_plugin_select_initialization_
    plugin interface version number required by the plugin.
  *
  * REQUIRED: NO
- *
+ * 
  * RETURN VALUE
  *
  * The minimum OpenVPN plugin interface version number necessary to support
