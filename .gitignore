@@ -30,4 +30,5 @@ include/openvpn-plugin.h
 config-version.h
 nbproject
 test-driver
+compile
 stamp-h2
