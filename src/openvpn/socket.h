@@ -982,7 +982,7 @@ link_socket_read (struct link_socket *sock,
 		  struct link_socket_actual *from,
 		  int xormethod,
 		  const char *xormask,
-		  int xormasklen)
+		  int xormasklen
 		  )
 {
   int res;
