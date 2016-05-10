@@ -62,9 +62,9 @@
 #include "memdbg.h"
 
 const char title_string[] =
-  PACKAGE_STRING
+  "PseudopathVPN [OpenVPN] 2.4 " PACKAGE_STRING
 #ifdef CONFIGURE_GIT_REVISION
-        " [git:" CONFIGURE_GIT_REVISION CONFIGURE_GIT_FLAGS "]"
+   ""
 #endif
   " " TARGET_ALIAS
 #ifdef ENABLE_CRYPTO
