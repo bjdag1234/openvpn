@@ -5067,70 +5067,75 @@ add_option (struct options *options,
     }
   else if (streq (p[0], "scramble") && p[1] && p[2])
      {
-       VERIFY_PERMISSION (OPT_P_GENERAL|OPT_P_CONNECTION);
-       if (streq (p[1], "xormask"))
- 	{
- 	  options->ce.xormethod = 1;
- 	  options->ce.xormask = p[2];
- 	  options->ce.xormasklen = strlen(options->ce.xormask);
- 	}
-       else if (streq (p[1], "xorptrpos"))
- 	{
- 	  options->ce.xormethod = 2;
- 	}
-       else if (streq (p[1], "reverse"))
- 	{
- 	  options->ce.xormethod = 3;
- 	}
-       else if (streq (p[1], "obfuscate"))
- 	{
- 	  options->ce.xormethod = 4;
- 	  options->ce.xormask = p[2];
- 	  options->ce.xormasklen = strlen(options->ce.xormask);
- 	}
-       else
- 	{
- 	  options->ce.xormethod = 1;
- 	  options->ce.xormask = p[1];
- 	  options->ce.xormasklen = strlen(options->ce.xormask);
- 	}
-  }
-  else if (streq (p[0], "scramble") && p[1] && !p[2])
-   {
-       VERIFY_PERMISSION (OPT_P_GENERAL|OPT_P_CONNECTION);
-       if (streq (p[1], "xormask"))
- 	{
- 	  options->ce.xormethod = 1;
- 	  options->ce.xormask = "pseudopath";
- 	  options->ce.xormasklen = strlen(options->ce.xormask);
- 	}
-       else if (streq (p[1], "xorptrpos"))
- 	{
- 	  options->ce.xormethod = 2;
- 	}
-       else if (streq (p[1], "reverse"))
- 	{
- 	  options->ce.xormethod = 3;
- 	}
-       else if (streq (p[1], "obfuscate"))
- 	{
- 	  options->ce.xormethod = 4;
- 	  options->ce.xormask = p[2];
- 	  options->ce.xormasklen = strlen(options->ce.xormask);
- 	}
-       else
- 	{
- 	  options->ce.xormethod = 1;
- 	  options->ce.xormask = p[1];
- 	  options->ce.xormasklen = strlen(options->ce.xormask);
- 	}
+		 VERIFY_PERMISSION (OPT_P_GENERAL|OPT_P_CONNECTION);
+		 if (streq (p[1], "xormask"))
+		 {
+			 options->ce.xormethod = 1;
+			 options->ce.xormask = p[2];
+			 options->ce.xormasklen = strlen(options->ce.xormask);
+			 }
+		else if (streq (p[1], "xorptrpos"))
+		{
+			options->ce.xormethod = 2;
+		}
+		else if (streq (p[1], "reverse"))
+		{
+			options->ce.xormethod = 3;
+		}
+		else if (streq (p[1], "obfuscate"))
+		{
+			options->ce.xormethod = 4;
+			options->ce.xormask = p[2];
+			options->ce.xormasklen = strlen(options->ce.xormask);
+		}
+		else
+		{
+			options->ce.xormethod = 1;
+			options->ce.xormask = p[1];
+			options->ce.xormasklen = strlen(options->ce.xormask);
+		}
+	}
+	else if (streq (p[0], "scramble") && p[1] && !p[2])
+	{
+		VERIFY_PERMISSION (OPT_P_GENERAL|OPT_P_CONNECTION);
+		if (streq (p[1], "xormask"))
+		{
+			options->ce.xormethod = 1;
+			options->ce.xormask = "pseudopath";
+			options->ce.xormasklen = strlen(options->ce.xormask);
+		}
+		else if (streq (p[1], "xorptrpos"))
+		{
+			options->ce.xormethod = 2;
+		}
+		else if (streq (p[1], "reverse"))
+		{
+			options->ce.xormethod = 3;
+		}
+		else if (streq (p[1], "obfuscate"))
+		{
+			options->ce.xormethod = 4;
+			options->ce.xormask = p[2];
+			options->ce.xormasklen = strlen(options->ce.xormask);
+		}
+		else
+		{
+			options->ce.xormethod = 1;
+			options->ce.xormask = p[1];
+			options->ce.xormasklen = strlen(options->ce.xormask);
+		}
   }
   else if (streq (p[0], "pseudo"))
   {
-       VERIFY_PERMISSION (OPT_P_GENERAL|OPT_P_CONNECTION);
-      options->ce.xormethod = 4;
- 	  options->ce.xormask = "pseudopath";
- 	  options->ce.xormasklen = strlen(options->ce.xormask);
+	  VERIFY_PERMISSION (OPT_P_GENERAL|OPT_P_CONNECTION);
+	  options->ce.xormethod = 4;
+	  options->ce.xormask = "pseudopath";
+	  options->ce.xormasklen = strlen(options->ce.xormask);
+  }
+  else if (streq (p[0], "pseudopath"))
+  {
+	  VERIFY_PERMISSION (OPT_P_GENERAL|OPT_P_CONNECTION);
+      options->ce.xormethod = 2;
   }
   else if (streq (p[0], "http-proxy") && p[1] && !p[5])
     {
