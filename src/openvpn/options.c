@@ -62,7 +62,7 @@
 #include "memdbg.h"
 
 const char title_string[] =
-  "PseudopathVPN "
+  "PseudopathVPN 2.4"
 #ifdef CONFIGURE_GIT_REVISION
    ""
 #endif
